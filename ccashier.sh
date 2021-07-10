@@ -2,7 +2,7 @@
 
 ccache_task="${1}"    # upload/download
 
-CCache_URL="https://gdrive.phantomzone.workers.dev/0:/mido_ccache/ccache.tgz"
+CCache_URL="https://server.boedhack.workers.dev/ccache/ci2/ccache.tgz"
 
 mkdir -p /home/runner/.cache/ccache /home/runner/.config/rclone
 
