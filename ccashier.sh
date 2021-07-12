@@ -13,9 +13,9 @@ if [[ ${ccache_task} =~ upload ]]; then
   tar -I "pigz -k -3" -cf ccache.tgz ccache
   du -sh ccache.tgz
   printf "Setting up rclone and uploading...\n"
-  echo "${RClone_Config}" > /home/runner/.config/rclone/rclone.conf
-  rclone delete td:/mido_ccache/ccache.tgz 2>/dev/null || true
-  rclone copy ccache.tgz td:/mido_ccache/ --progress
+  echo "${RCLONE}" > /home/runner/.config/rclone/rclone.conf
+  rclone delete td:/mojito_ccache/ccache.tgz 2>/dev/null || true
+  rclone copy ccache.tgz td:/mojito_ccache/ --progress
   rm -rf ccache.tgz
 elif [[ ${ccache_task} =~ download ]]; then
   printf "Downloading previous ccache...\n"

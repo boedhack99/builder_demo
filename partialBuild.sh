@@ -6,7 +6,7 @@ export ALLOW_MISSING_DEPENDENCIES=true
 
 echo "::group::Lunch for ${partialTarget}"
 . build/envsetup.sh
-lunch aosp_mido-user
+lunch lineage_mojito-userdebug
 echo "::endgroup::"
 
 rm -rf .repo 2>/dev/null || true
@@ -28,7 +28,7 @@ _ccache_stats() {
 _ccache_stats 2>/dev/null &
 
 {
-  make -j4 ${1} || mmma ${1}
+  make -j4 sepolicy
 } || true
 kill %1
 echo "::endgroup::"
